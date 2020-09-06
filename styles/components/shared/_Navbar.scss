@@ -1,0 +1,12 @@
+.Navbar {
+  width: 100vw;
+  background-color: $color-gray-100;
+  box-shadow: $shadow-sm;
+
+  &__nav-list {
+    list-style-type: none;
+  }
+
+  &__nav-list-item {
+  }
+}

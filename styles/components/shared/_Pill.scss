@@ -1,0 +1,70 @@
+.Pill {
+  background-color: $color-gray-100;
+  border-radius: 3em;
+  position: relative;
+  font-size: 0.75em;
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  margin: 0.25em 0.25em;
+  transition: all $transition-fast;
+  border: none;
+  box-shadow: $shadow-sm;
+  opacity: 0.5;
+
+  &--toggleable {
+    &:hover,
+    &:focus {
+      transform: scale(1.05) translate(0, 0);
+    }
+  }
+
+  &--checked {
+    opacity: 1;
+  }
+
+  &__flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__label {
+    line-height: 1em;
+  }
+}
+
+.PillWithColor {
+  @extend .Pill;
+
+  &__color {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  &__label {
+    margin-left: 0.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+  }
+
+  &__close-icon {
+    margin-left: 0.75em;
+    opacity: 0;
+  }
+}
+
+.Pill--checked {
+  opacity: 1;
+
+  .PillWithColor__close-icon {
+    opacity: 1;
+  }
+}
+
+.Pill:not(.Pill--toggleable),
+.PillWithColor:not(.PillWithColor--toggleable) {
+  outline: none;
+}
